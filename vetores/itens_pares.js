@@ -12,9 +12,14 @@ for(let i = 0; i < 7; i++) {
     
     if(vetor[i] % 2 == 0) {
         numPares++
-        pares.push(vetor[i])
+        pares.push({
+            posicao: i,
+            valor: vetor[i]
+        })
     }
 }
 
-console.log(`No vetor, existem ${numPares} numeros pares, são eles: `);
-console.log(pares);
+console.log(`\nNo vetor, existem ${numPares} números pares, são eles: `);
+pares.forEach((num) => {
+    console.log(`O número ${num.valor} na posição ${num.posicao + 1}`);
+})
